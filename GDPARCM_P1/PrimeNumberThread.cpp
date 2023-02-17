@@ -8,13 +8,13 @@ PrimeNumberThread::PrimeNumberThread(int _prime) : IETThread()
 }
 
 void PrimeNumberThread::run()
-{
+{	
 	IETThread::sleep(500 * count);
 	isRunning = true;
 
 	int inc = ((1.0f / maxCount)) * prime;
 
-	std::cout << inc << std::endl;
+	//std::cout << inc << std::endl;
 
 	int start = count * inc;
 
@@ -39,10 +39,11 @@ void PrimeNumberThread::run()
 		}
 	}
 
+	std::cout << prime;
 	if (isPrime)
-		std::cout << "prime\n";
+		std::cout << " is PRIME\n";
 	else
-		std::cout << "not prime\n";
+		std::cout << " is NOT PRIME\n";
 	
 	isRunning = false;
 }

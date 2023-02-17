@@ -14,11 +14,13 @@ void PrimeNumberThread::run()
 
 	int inc = ((1.0f / maxCount)) * prime;
 
+	std::cout << inc << std::endl;
+
 	int start = count * inc;
-	if (start < 2)
-		start = 2;
 
 	int end = start + inc;
+	if (start < 2)
+		start = 2;
 
 	if (end < 0)
 		end = prime;
@@ -28,7 +30,7 @@ void PrimeNumberThread::run()
 
 	bool isPrime = true;
 
-	for (int i = start; i <= end; i++)
+	for (int i = start; i < end; i++)
 	{
 		if (prime % i == 0)
 		{

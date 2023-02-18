@@ -25,8 +25,8 @@ void PrimeNumberThread::run()
 	if (end < 0)
 		end = prime;
 
-	//std::cout << "Start: " << start << '\n';
-	//std::cout << "End: " << end << '\n';
+	//std::cout << "Start: " << start << std::endl;
+	//std::cout << "End: " << end << std::endl;
 
 	bool isPrime = true;
 
@@ -38,11 +38,11 @@ void PrimeNumberThread::run()
 			break;
 		}
 	}
-
+	std::string toPrint = "Thread #" + std::to_string(count) + ": " + std::to_string(count);
 	if (isPrime)
-		std::cout << prime << " is PRIME\n";
+		toPrint += " is PRIME\n";
 	else
-		std::cout << prime << " is NOT PRIME\n";
-	
+		toPrint += " is NOT PRIME\n";
+	std::cout << toPrint;
 	isRunning = false;
 }
